@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="protected-page">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +7,14 @@
   <title>Resources | Smart Teacher Toolkit</title>
 
   <style>
+    body {
+      visibility: hidden;
+    }
+
+    html.auth-ready body {
+      visibility: visible;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -67,6 +75,7 @@
       gap: 22px;
       font-size: 15px;
       font-weight: 600;
+      align-items: center;
     }
 
     .menu a {
@@ -77,6 +86,21 @@
     .menu a:hover,
     .menu .active {
       color: #2563eb;
+    }
+
+    .logout-link {
+      background: #fee2e2;
+      color: #991b1b !important;
+      padding: 9px 14px;
+      border-radius: 10px;
+    }
+
+    .user-box {
+      background: #eff6ff;
+      color: #1e40af;
+      padding: 9px 14px;
+      border-radius: 10px;
+      font-size: 14px;
     }
 
     .hero {
@@ -362,17 +386,19 @@
       .hero h1 {
         font-size: 42px;
       }
+
+      .menu {
+        gap: 14px;
+        font-size: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
     }
 
     @media (max-width: 650px) {
       nav {
         flex-direction: column;
         gap: 15px;
-      }
-
-      .menu {
-        flex-wrap: wrap;
-        justify-content: center;
       }
 
       .hero {
@@ -413,6 +439,8 @@
           <a href="index.html#materials">Materials</a>
           <a href="index.html#about">About</a>
           <a href="contact.html">Contact</a>
+          <span class="user-box">Hi, <span data-user-name>Teacher</span></span>
+          <a href="#" class="logout-link" data-logout>Logout</a>
         </div>
       </nav>
     </div>
@@ -484,7 +512,7 @@
             <p>
               Short reading passages, comprehension questions, vocabulary tasks, and answer keys.
             </p>
-            <a href="contact.html" class="download-link">Request Resource →</a>
+            <a href="reading-comprehension-worksheet.html" class="download-link">Open Resource →</a>
           </div>
         </div>
 
@@ -496,7 +524,7 @@
             <p>
               Simple templates for weekly planning, daily lesson preparation, and classroom organization.
             </p>
-            <a href="contact.html" class="download-link">Request Resource →</a>
+            <a href="weekly-lesson-plan-template.html" class="download-link">Open Resource →</a>
           </div>
         </div>
 
@@ -606,6 +634,8 @@
     <p>© 2026 Smart Teacher Toolkit. All rights reserved.</p>
     <p>Teaching resources for <span>elementary teachers</span></p>
   </footer>
+
+  <script type="module" src="protected.js"></script>
 
 </body>
 </html>
