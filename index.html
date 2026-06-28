@@ -66,7 +66,7 @@
 
     .menu {
       display: flex;
-      gap: 24px;
+      gap: 22px;
       font-size: 15px;
       font-weight: 600;
     }
@@ -184,8 +184,26 @@
       margin-bottom: 18px;
     }
 
-    .features {
+    .video-section {
       background: #eff6ff;
+    }
+
+    .video-box {
+      max-width: 900px;
+      margin: auto;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.16);
+      background: #000;
+    }
+
+    .video-box video {
+      width: 100%;
+      display: block;
+    }
+
+    .features {
+      background: #ffffff;
     }
 
     .grid-3 {
@@ -227,6 +245,10 @@
     .card-content p {
       color: #6b7280;
       font-size: 15.5px;
+    }
+
+    .blog-section {
+      background: #eff6ff;
     }
 
     .blog-grid {
@@ -323,6 +345,17 @@
       padding: 24px;
     }
 
+    .product-content h3 {
+      font-size: 21px;
+      color: #111827;
+      margin-bottom: 10px;
+    }
+
+    .product-content p {
+      color: #6b7280;
+      font-size: 15px;
+    }
+
     .price {
       color: #2563eb;
       font-size: 27px;
@@ -348,6 +381,11 @@
     .facebook h2 {
       font-size: 38px;
       margin-bottom: 18px;
+      color: #111827;
+    }
+
+    .facebook p {
+      color: #4b5563;
     }
 
     .facebook ul {
@@ -446,6 +484,10 @@
         justify-content: center;
       }
 
+      .hero {
+        min-height: 75vh;
+      }
+
       .hero h1 {
         font-size: 34px;
       }
@@ -473,6 +515,10 @@
       .freebie {
         padding: 40px 25px;
       }
+
+      .btn {
+        margin-bottom: 10px;
+      }
     }
   </style>
 </head>
@@ -487,6 +533,7 @@
         <div class="menu">
           <a href="#home">Home</a>
           <a href="#about">About</a>
+          <a href="#video">Video</a>
           <a href="#resources">Resources</a>
           <a href="#blog">Blog</a>
           <a href="#shop">Shop</a>
@@ -539,6 +586,25 @@
     </div>
   </section>
 
+  <section class="section video-section" id="video">
+    <div class="container">
+      <div class="section-title">
+        <h2>Discover Our Teacher Resources</h2>
+        <p>
+          Watch this short video to understand how teacher-made resources, printables,
+          and AI tools can help teachers save time and prepare better classroom activities.
+        </p>
+      </div>
+
+      <div class="video-box">
+        <video controls poster="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80">
+          <source src="videos/teacher-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
   <section class="section features" id="resources">
     <div class="container">
       <div class="section-title">
@@ -583,7 +649,7 @@
     </div>
   </section>
 
-  <section class="section" id="blog">
+  <section class="section blog-section" id="blog">
     <div class="container">
       <div class="section-title">
         <h2>Latest Blog Articles</h2>
