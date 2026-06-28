@@ -6,8 +6,6 @@
 
   <title>Resources | Smart Teacher Toolkit</title>
 
-  <meta name="description" content="Practical worksheets, lesson plan templates, reading activities, classroom routines, and printable resources for elementary teachers." />
-
   <style>
     * {
       margin: 0;
@@ -130,14 +128,14 @@
       font-size: 17px;
     }
 
-    .resources-intro {
+    .intro {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 45px;
       align-items: center;
     }
 
-    .resources-intro img {
+    .intro img {
       border-radius: 24px;
       height: 430px;
       width: 100%;
@@ -145,13 +143,13 @@
       box-shadow: 0 20px 45px rgba(0,0,0,0.12);
     }
 
-    .resources-intro h2 {
+    .intro h2 {
       font-size: 38px;
       margin-bottom: 18px;
       color: #111827;
     }
 
-    .resources-intro p {
+    .intro p {
       color: #4b5563;
       margin-bottom: 18px;
     }
@@ -169,14 +167,6 @@
     .btn:hover {
       background: #1d4ed8;
       transform: translateY(-2px);
-    }
-
-    .btn-orange {
-      background: #f59e0b;
-    }
-
-    .btn-orange:hover {
-      background: #d97706;
     }
 
     .categories {
@@ -261,55 +251,8 @@
       font-size: 18px;
     }
 
-    .planning-section {
+    .support-section {
       background: #fff7ed;
-    }
-
-    .planning-box {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 45px;
-      align-items: center;
-      background: white;
-      border-radius: 28px;
-      overflow: hidden;
-      border: 1px solid #fed7aa;
-      box-shadow: 0 18px 45px rgba(0,0,0,0.08);
-    }
-
-    .planning-box img {
-      height: 460px;
-      width: 100%;
-      object-fit: cover;
-    }
-
-    .planning-content {
-      padding: 45px;
-    }
-
-    .planning-content h2 {
-      font-size: 36px;
-      color: #111827;
-      margin-bottom: 18px;
-    }
-
-    .planning-content p {
-      color: #4b5563;
-      margin-bottom: 16px;
-    }
-
-    .planning-content ul {
-      margin-left: 20px;
-      color: #4b5563;
-      margin-bottom: 22px;
-    }
-
-    .planning-content li {
-      margin-bottom: 10px;
-    }
-
-    .classroom-support {
-      background: #ffffff;
     }
 
     .support-grid {
@@ -319,8 +262,8 @@
     }
 
     .support-card {
-      background: #f8fafc;
-      border: 1px solid #e5e7eb;
+      background: white;
+      border: 1px solid #fed7aa;
       padding: 28px;
       border-radius: 20px;
       text-align: center;
@@ -404,8 +347,7 @@
     }
 
     @media (max-width: 900px) {
-      .resources-intro,
-      .planning-box {
+      .intro {
         grid-template-columns: 1fr;
       }
 
@@ -419,15 +361,6 @@
 
       .hero h1 {
         font-size: 42px;
-      }
-
-      .menu {
-        gap: 14px;
-        font-size: 14px;
-      }
-
-      .planning-box img {
-        height: 360px;
       }
     }
 
@@ -450,33 +383,17 @@
         font-size: 34px;
       }
 
-      .hero p {
-        font-size: 16px;
-      }
-
       .grid-3,
       .support-grid {
         grid-template-columns: 1fr;
       }
 
-      .section-title h2,
-      .resources-intro h2,
-      .planning-content h2,
-      .free-pack h2,
-      .newsletter h2 {
-        font-size: 29px;
-      }
-
-      .planning-content {
-        padding: 30px;
+      .newsletter-form {
+        flex-direction: column;
       }
 
       .free-pack {
         padding: 40px 25px;
-      }
-
-      .newsletter-form {
-        flex-direction: column;
       }
     }
   </style>
@@ -495,7 +412,7 @@
           <a href="resources.html" class="active">Resources</a>
           <a href="index.html#materials">Materials</a>
           <a href="index.html#about">About</a>
-          <a href="index.html#contact">Contact</a>
+          <a href="contact.html">Contact</a>
         </div>
       </nav>
     </div>
@@ -513,9 +430,9 @@
 
   <section class="section">
     <div class="container">
-      <div class="resources-intro">
+      <div class="intro">
         <div>
-          <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1000&q=80" alt="Teacher preparing classroom resources">
+          <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1000&q=80" alt="Teacher preparing resources">
         </div>
 
         <div>
@@ -547,79 +464,77 @@
       </div>
 
       <div class="grid-3">
-
         <div class="resource-card">
-          <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1000&q=80" alt="Books and worksheets">
+          <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1000&q=80" alt="Worksheets">
           <div class="resource-content">
             <span>Worksheets</span>
             <h3>Printable Worksheets</h3>
             <p>
               Practice sheets for reading, writing, vocabulary, math, and daily classroom activities.
             </p>
-            <a href="#" class="download-link">View Resources →</a>
+            <a href="contact.html" class="download-link">Request Resource →</a>
           </div>
         </div>
 
         <div class="resource-card">
-          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1000&q=80" alt="Reading books and materials">
+          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1000&q=80" alt="Reading activities">
           <div class="resource-content">
             <span>Reading</span>
             <h3>Reading Activities</h3>
             <p>
               Short reading passages, comprehension questions, vocabulary tasks, and answer keys.
             </p>
-            <a href="#" class="download-link">View Resources →</a>
+            <a href="contact.html" class="download-link">Request Resource →</a>
           </div>
         </div>
 
         <div class="resource-card">
-          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80" alt="Lesson planning desk">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80" alt="Lesson planning">
           <div class="resource-content">
             <span>Planning</span>
             <h3>Lesson Plan Templates</h3>
             <p>
               Simple templates for weekly planning, daily lesson preparation, and classroom organization.
             </p>
-            <a href="#" class="download-link">View Resources →</a>
+            <a href="contact.html" class="download-link">Request Resource →</a>
           </div>
         </div>
 
         <div class="resource-card">
-          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=80" alt="Classroom organization">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=80" alt="Classroom routines">
           <div class="resource-content">
             <span>Classroom</span>
             <h3>Classroom Routines</h3>
             <p>
               Classroom rules, morning routines, transition checklists, and organization tools.
             </p>
-            <a href="#" class="download-link">View Resources →</a>
+            <a href="contact.html" class="download-link">Request Resource →</a>
           </div>
         </div>
 
         <div class="resource-card">
-          <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1000&q=80" alt="Teacher planning notebook">
+          <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1000&q=80" alt="Teacher planning">
           <div class="resource-content">
             <span>Organization</span>
             <h3>Teacher Planning Pages</h3>
             <p>
               Planning pages, checklists, weekly schedules, and simple tools for teacher organization.
             </p>
-            <a href="#" class="download-link">View Resources →</a>
+            <a href="contact.html" class="download-link">Request Resource →</a>
           </div>
         </div>
 
         <div class="resource-card">
-          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=80" alt="Students learning in classroom">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=80" alt="Classroom activities">
           <div class="resource-content">
             <span>Activities</span>
             <h3>Classroom Activities</h3>
             <p>
               Engaging activities for reading, writing, teamwork, vocabulary, and classroom practice.
             </p>
-            <a href="#" class="download-link">View Resources →</a>
+            <a href="contact.html" class="download-link">Request Resource →</a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -632,40 +547,12 @@
           Start with a simple pack including a lesson plan template, a reading worksheet,
           and a classroom routine checklist.
         </p>
-        <a href="#contact" class="btn btn-orange">Download Free Pack</a>
+        <a href="contact.html" class="btn">Request Free Pack</a>
       </div>
     </div>
   </section>
 
-  <section class="section planning-section">
-    <div class="container">
-      <div class="planning-box">
-        <div>
-          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80" alt="Teacher planning lessons">
-        </div>
-
-        <div class="planning-content">
-          <h2>Lesson Planning Made Easier</h2>
-          <p>
-            Good teaching preparation becomes easier when the materials are clear and organized.
-            The planning resources help teachers prepare lessons with structure and confidence.
-          </p>
-
-          <ul>
-            <li>Weekly lesson plan templates.</li>
-            <li>Daily activity planning pages.</li>
-            <li>Classroom objective organizers.</li>
-            <li>Materials and preparation checklists.</li>
-            <li>Simple reflection notes for teachers.</li>
-          </ul>
-
-          <a href="#contact" class="btn">Get Planning Resources</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section classroom-support">
+  <section class="section support-section">
     <div class="container">
       <div class="section-title">
         <h2>How These Resources Help Teachers</h2>
@@ -702,7 +589,7 @@
     </div>
   </section>
 
-  <section class="newsletter" id="contact">
+  <section class="newsletter">
     <h2>Join the Free Teacher Resource Library</h2>
     <p>
       Receive worksheets, classroom printables, reading activities, lesson ideas,
