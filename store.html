@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en" class="protected-page">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Store | Smart Teacher Toolkit</title>
+
+  <style>
+    body {
+      visibility: hidden;
+    }
+
+    html.auth-ready body {
+      visibility: visible;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8fafc;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1250px;
+      margin: auto;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .top-nav {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 28px;
+      align-items: center;
+      padding: 22px 0;
+    }
+
+    .left-header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .menu-icon {
+      font-size: 34px;
+      cursor: pointer;
+      color: #111827;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 28px;
+      font-weight: 900;
+      color: #111827;
+    }
+
+    .logo-mark {
+      width: 45px;
+      height: 45px;
+      background: #10b981;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .logo span {
+      color: #10b981;
+    }
+
+    .search-area {
+      display: flex;
+      align-items: center;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      border-radius: 50px;
+      overflow: hidden;
+      max-width: 560px;
+      width: 100%;
+      justify-self: center;
+    }
+
+    .search-area input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      padding: 16px 22px;
+      font-size: 16px;
+      color: #374151;
+    }
+
+    .search-area button {
+      width: 65px;
+      height: 58px;
+      border: none;
+      background: #10b981;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .search-area button:hover {
+      background: #059669;
+    }
+
+    .right-header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-weight: 700;
+      color: #374151;
+      white-space: nowrap;
+    }
+
+    .right-header a:hover {
+      color: #10b981;
+    }
+
+    .cart {
+      font-size: 30px;
+      position: relative;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -10px;
+      background: #ef4444;
+      color: white;
+      font-size: 12px;
+      width: 20px;
+      height: 20px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+    }
+
+    .sub-nav {
+      background: #ffffff;
+      border-top: 1px solid #f3f4f6;
+    }
+
+    .sub-menu {
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+      padding: 14px 0;
+      font-size: 15px;
+      font-weight: 700;
+      color: #4b5563;
+    }
+
+    .sub-menu a:hover {
+      color: #10b981;
+    }
+
+    .logout-link {
+      color: #991b1b !important;
+    }
+
+    .hero {
+      background:
+        linear-gradient(rgba(236, 253, 245, 0.95), rgba(240, 253, 250, 0.95)),
+        url("https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      padding: 90px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 680px;
+    }
+
+    .hero h1 {
+      font-size: 54px;
+      line-height: 1.12;
+      color: #064e3b;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: #10b981;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #374151;
+      margin-bottom: 28px;
+      max-width: 600px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 26px;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .btn-green {
+      background: #10b981;
+      color: white;
+    }
+
+    .btn-green:hover {
+      background: #059669;
+      transform: translateY(-2px);
+    }
+
+    .btn-dark {
+      background: #111827;
+      color: white;
+    }
+
+    .btn-dark:hover {
+      background: #374151;
+      transform: translateY(-2px);
+    }
+
+    .section {
+      padding: 75px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #6b7280;
+      max-width: 700px;
+      margin: auto;
+      font-size: 17px;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 22px;
+    }
+
+    .category-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 22px;
+      padding: 28px 18px;
+      text-align: center;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .category-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.09);
+      border-color: #10b981;
+    }
+
+    .category-icon {
+      width: 70px;
+      height: 70px;
+      background: #ecfdf5;
+      color: #10b981;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 32px;
+      margin: 0 auto 15px;
+    }
+
+    .category-card h3 {
+      font-size: 18px;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    .category-card p {
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    .store-section {
+      background: #f9fafb;
+    }
+
+    .store-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 35px;
+      align-items: start;
+    }
+
+    .filters {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 22px;
+      padding: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 125px;
+    }
+
+    .filters h3 {
+      font-size: 22px;
+      color: #111827;
+      margin-bottom: 18px;
+    }
+
+    .filter-group {
+      margin-bottom: 25px;
+    }
+
+    .filter-group h4 {
+      font-size: 16px;
+      color: #374151;
+      margin-bottom: 12px;
+    }
+
+    .filter-group label {
+      display: block;
+      color: #6b7280;
+      font-size: 15px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .products-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .products-top h2 {
+      font-size: 30px;
+      color: #111827;
+    }
+
+    .sort-box {
+      padding: 12px 16px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      background: white;
+      color: #374151;
+      font-weight: 600;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      transition: 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 22px 45px rgba(0,0,0,0.1);
+    }
+
+    .product-image {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .product-content {
+      padding: 24px;
+    }
+
+    .product-tag {
+      color: #10b981;
+      font-size: 13px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .product-content h3 {
+      font-size: 21px;
+      color: #111827;
+      margin: 10px 0;
+    }
+
+    .product-content p {
+      color: #6b7280;
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: 900;
+      color: #111827;
+    }
+
+    .rating {
+      color: #f59e0b;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .product-actions a,
+    .product-actions button {
+      flex: 1;
+      text-align: center;
+      padding: 12px;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .view-btn {
+      background: #ecfdf5;
+      color: #047857;
+    }
+
+    .view-btn:hover {
+      background: #d1fae5;
+    }
+
+    .add-btn {
+      background: #10b981;
+      color: white;
+    }
+
+    .add-btn:hover {
+      background: #059669;
+    }
+
+    .banner {
+      background:
+        linear-gradient(rgba(16, 185, 129, 0.92), rgba(5, 150, 105, 0.92)),
+        url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .banner h2 {
+      font-size: 38px;
+      margin-bottom: 14px;
+    }
+
+    .banner p {
+      max-width: 750px;
+      margin: 0 auto 25px;
+      color: #ecfdf5;
+      font-size: 17px;
+    }
+
+    footer {
+      background: #020617;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 35px 15px;
+      font-size: 14px;
+    }
+
+    footer span {
+      color: #10b981;
+    }
+
+    @media (max-width: 1100px) {
+      .top-nav {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        text-align: center;
+      }
+
+      .left-header,
+      .right-header {
+        justify-content: center;
+      }
+
+      .search-area {
+        justify-self: center;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .store-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .filters {
+        position: static;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+
+      .sub-menu {
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+
+      .category-grid,
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .right-header {
+        flex-wrap: wrap;
+      }
+
+      .section-title h2,
+      .banner h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <div class="top-nav">
+
+        <div class="left-header">
+          <div class="menu-icon">☰</div>
+
+          <a href="home.html" class="logo">
+            <div class="logo-mark">ST</div>
+            Smart <span>Toolkit</span>
+          </a>
+        </div>
+
+        <div class="search-area">
+          <input type="text" id="searchInput" placeholder="Search teaching resources...">
+          <button onclick="searchProducts()">🔍</button>
+        </div>
+
+        <div class="right-header">
+          <span>Hi, <span data-user-name>Teacher</span></span>
+          <a href="#" data-logout class="logout-link">Logout</a>
+          <div class="cart">🛒 <span class="cart-count" id="cartCount">0</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="sub-nav">
+      <div class="container">
+        <div class="sub-menu">
+          <a href="home.html">Home</a>
+          <a href="store.html">Store</a>
+          <a href="resources.html">Resources</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Teacher-Made <span>Classroom Materials</span></h1>
+        <p>
+          Discover printable worksheets, lesson plan templates, reading activities,
+          classroom routines, and practical resources designed for elementary teachers.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#store" class="btn btn-green">Explore Materials</a>
+          <a href="blog.html" class="btn btn-dark">Read Teaching Ideas</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Browse by Category</h2>
+        <p>
+          Find teaching materials by classroom need and subject area.
+        </p>
+      </div>
+
+      <div class="category-grid">
+        <div class="category-card">
+          <div class="category-icon">📖</div>
+          <h3>Reading</h3>
+          <p>Comprehension passages and literacy activities.</p>
+        </div>
+
+        <div class="category-card">
+          <div class="category-icon">📝</div>
+          <h3>Worksheets</h3>
+          <p>Printable practice pages for daily learning.</p>
+        </div>
+
+        <div class="category-card">
+          <div class="category-icon">📅</div>
+          <h3>Planning</h3>
+          <p>Weekly and daily lesson planning templates.</p>
+        </div>
+
+        <div class="category-card">
+          <div class="category-icon">🏫</div>
+          <h3>Classroom</h3>
+          <p>Routines, rules, posters, and organization tools.</p>
+        </div>
+
+        <div class="category-card">
+          <div class="category-icon">🧩</div>
+          <h3>Activities</h3>
+          <p>Simple learning activities for elementary students.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section store-section" id="store">
+    <div class="container">
+      <div class="store-layout">
+
+        <aside class="filters">
+          <h3>Filters</h3>
+
+          <div class="filter-group">
+            <h4>Grade Level</h4>
+            <label><input type="checkbox"> 1st Grade</label>
+            <label><input type="checkbox"> 2nd Grade</label>
+            <label><input type="checkbox"> 3rd Grade</label>
+            <label><input type="checkbox"> 4th Grade</label>
+          </div>
+
+          <div class="filter-group">
+            <h4>Resource Type</h4>
+            <label><input type="checkbox"> Worksheets</label>
+            <label><input type="checkbox"> Lesson Plans</label>
+            <label><input type="checkbox"> Reading</label>
+            <label><input type="checkbox"> Classroom Routines</label>
+          </div>
+
+          <div class="filter-group">
+            <h4>Access</h4>
+            <label><input type="checkbox"> Free Resources</label>
+            <label><input type="checkbox"> Premium Materials</label>
+          </div>
+        </aside>
+
+        <main>
+          <div class="products-top">
+            <h2>Featured Materials</h2>
+
+            <select class="sort-box">
+              <option>Sort by: Featured</option>
+              <option>Newest</option>
+              <option>Most Popular</option>
+              <option>Free First</option>
+            </select>
+          </div>
+
+          <div class="product-grid" id="productGrid">
+
+            <div class="product-card" data-title="reading comprehension worksheet">
+              <img class="product-image" src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1000&q=80" alt="Reading worksheet">
+              <div class="product-content">
+                <span class="product-tag">Reading</span>
+                <h3>Reading Comprehension Worksheet</h3>
+                <p>Short passage, guided questions, and answer key for elementary learners.</p>
+
+                <div class="product-meta">
+                  <div class="price">Free</div>
+                  <div class="rating">★★★★★</div>
+                </div>
+
+                <div class="product-actions">
+                  <a href="reading-comprehension-worksheet.html" class="view-btn">View</a>
+                  <button class="add-btn" onclick="addToCart()">Add</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card" data-title="weekly lesson plan template">
+              <img class="product-image" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80" alt="Lesson plan template">
+              <div class="product-content">
+                <span class="product-tag">Planning</span>
+                <h3>Weekly Lesson Plan Template</h3>
+                <p>A simple planning structure for objectives, materials, and activities.</p>
+
+                <div class="product-meta">
+                  <div class="price">Free</div>
+                  <div class="rating">★★★★★</div>
+                </div>
+
+                <div class="product-actions">
+                  <a href="weekly-lesson-plan-template.html" class="view-btn">View</a>
+                  <button class="add-btn" onclick="addToCart()">Add</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card" data-title="classroom routine checklist">
+              <img class="product-image" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=80" alt="Classroom routine">
+              <div class="product-content">
+                <span class="product-tag">Classroom</span>
+                <h3>Classroom Routine Checklist</h3>
+                <p>Simple classroom routines, rules, and organization ideas for teachers.</p>
+
+                <div class="product-meta">
+                  <div class="price">Free</div>
+                  <div class="rating">★★★★☆</div>
+                </div>
+
+                <div class="product-actions">
+                  <a href="resources.html" class="view-btn">View</a>
+                  <button class="add-btn" onclick="addToCart()">Add</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card" data-title="printable vocabulary worksheets">
+              <img class="product-image" src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1000&q=80" alt="Vocabulary worksheets">
+              <div class="product-content">
+                <span class="product-tag">Worksheets</span>
+                <h3>Printable Vocabulary Worksheets</h3>
+                <p>Useful practice pages for vocabulary building and sentence writing.</p>
+
+                <div class="product-meta">
+                  <div class="price">Free</div>
+                  <div class="rating">★★★★★</div>
+                </div>
+
+                <div class="product-actions">
+                  <a href="resources.html" class="view-btn">View</a>
+                  <button class="add-btn" onclick="addToCart()">Add</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card" data-title="teacher planning pages">
+              <img class="product-image" src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1000&q=80" alt="Teacher planning pages">
+              <div class="product-content">
+                <span class="product-tag">Organization</span>
+                <h3>Teacher Planning Pages</h3>
+                <p>Planning pages, checklists, schedules, and preparation tools.</p>
+
+                <div class="product-meta">
+                  <div class="price">Free</div>
+                  <div class="rating">★★★★☆</div>
+                </div>
+
+                <div class="product-actions">
+                  <a href="resources.html" class="view-btn">View</a>
+                  <button class="add-btn" onclick="addToCart()">Add</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card" data-title="elementary classroom activities">
+              <img class="product-image" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=80" alt="Classroom activities">
+              <div class="product-content">
+                <span class="product-tag">Activities</span>
+                <h3>Elementary Classroom Activities</h3>
+                <p>Simple activities for reading, writing, teamwork, and classroom practice.</p>
+
+                <div class="product-meta">
+                  <div class="price">Free</div>
+                  <div class="rating">★★★★★</div>
+                </div>
+
+                <div class="product-actions">
+                  <a href="resources.html" class="view-btn">View</a>
+                  <button class="add-btn" onclick="addToCart()">Add</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </main>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="banner">
+    <h2>Build Your Teacher Resource Library</h2>
+    <p>
+      Save useful worksheets, lesson planning templates, classroom routines,
+      and reading activities in one simple teaching space.
+    </p>
+    <a href="resources.html" class="btn btn-dark">Open Resource Library</a>
+  </section>
+
+  <footer>
+    <p>© 2026 Smart Teacher Toolkit. All rights reserved.</p>
+    <p>Teacher-made materials for <span>elementary teachers</span></p>
+  </footer>
+
+  <script>
+    let cartCount = 0;
+
+    function addToCart() {
+      cartCount++;
+      document.getElementById("cartCount").textContent = cartCount;
+    }
+
+    function searchProducts() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const cards = document.querySelectorAll(".product-card");
+
+      cards.forEach(function(card) {
+        const title = card.getAttribute("data-title").toLowerCase();
+
+        if (title.includes(input)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  </script>
+
+  <script type="module" src="protected.js"></script>
+
+</body>
+</html>
