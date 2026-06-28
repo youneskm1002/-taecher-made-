@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Free 3rd Grade Reading Comprehension Worksheet | Smart Teacher Toolkit</title>
+
+  <meta name="description" content="A practical 3rd grade reading comprehension worksheet with a short passage, guided questions, and classroom activity ideas for elementary teachers." />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8fafc;
+      color: #1f2937;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      color: #2563eb;
+    }
+
+    .logo span {
+      color: #f59e0b;
+    }
+
+    .menu {
+      display: flex;
+      gap: 22px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .menu a {
+      color: #374151;
+      transition: 0.3s;
+    }
+
+    .menu a:hover {
+      color: #2563eb;
+    }
+
+    .hero {
+      background:
+        linear-gradient(rgba(15, 23, 42, 0.76), rgba(15, 23, 42, 0.72)),
+        url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 115px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: #fbbf24;
+    }
+
+    .hero p {
+      max-width: 780px;
+      margin: auto;
+      color: #e5e7eb;
+      font-size: 18px;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: 2fr 0.8fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .article {
+      background: white;
+      padding: 42px;
+      border-radius: 24px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+      border: 1px solid #e5e7eb;
+    }
+
+    .article img {
+      border-radius: 20px;
+      margin-bottom: 28px;
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+    }
+
+    .article .tag {
+      color: #2563eb;
+      font-size: 13px;
+      font-weight: bold;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .article h2 {
+      font-size: 32px;
+      color: #111827;
+      margin: 32px 0 14px;
+    }
+
+    .article h3 {
+      font-size: 24px;
+      color: #111827;
+      margin: 28px 0 12px;
+    }
+
+    .article p {
+      color: #4b5563;
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+
+    .article ul,
+    .article ol {
+      margin-left: 24px;
+      color: #4b5563;
+      margin-bottom: 22px;
+    }
+
+    .article li {
+      margin-bottom: 10px;
+    }
+
+    .note-box {
+      background: #eff6ff;
+      border-left: 5px solid #2563eb;
+      padding: 22px;
+      border-radius: 14px;
+      margin: 28px 0;
+    }
+
+    .note-box h3 {
+      margin-top: 0;
+      color: #1e40af;
+    }
+
+    .worksheet-box {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      padding: 28px;
+      border-radius: 20px;
+      margin: 32px 0;
+    }
+
+    .worksheet-box h3 {
+      color: #111827;
+      margin-top: 0;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 14px 26px;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .btn-orange {
+      background: #f59e0b;
+    }
+
+    .btn-orange:hover {
+      background: #d97706;
+    }
+
+    .sidebar {
+      display: grid;
+      gap: 24px;
+    }
+
+    .side-card {
+      background: white;
+      padding: 26px;
+      border-radius: 22px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      border: 1px solid #e5e7eb;
+    }
+
+    .side-card h3 {
+      color: #111827;
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .side-card p {
+      color: #6b7280;
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+
+    .side-card ul {
+      margin-left: 20px;
+      color: #4b5563;
+    }
+
+    .side-card li {
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .related-section {
+      background: #eff6ff;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #6b7280;
+      max-width: 720px;
+      margin: auto;
+      font-size: 17px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .related-card {
+      background: white;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      transition: 0.3s;
+    }
+
+    .related-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.1);
+    }
+
+    .related-card img {
+      height: 210px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .related-content {
+      padding: 24px;
+    }
+
+    .related-content span {
+      color: #2563eb;
+      font-size: 13px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .related-content h3 {
+      font-size: 21px;
+      margin: 10px 0;
+      color: #111827;
+    }
+
+    .related-content p {
+      color: #6b7280;
+      font-size: 15px;
+    }
+
+    .newsletter {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 75px 20px;
+    }
+
+    .newsletter h2 {
+      font-size: 36px;
+      margin-bottom: 14px;
+    }
+
+    .newsletter p {
+      color: #d1d5db;
+      max-width: 650px;
+      margin: 0 auto 25px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      max-width: 540px;
+      margin: auto;
+      gap: 10px;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 16px;
+      border-radius: 10px;
+      border: none;
+      font-size: 15px;
+    }
+
+    .newsletter-form button {
+      padding: 16px 25px;
+      border: none;
+      border-radius: 10px;
+      background: #f59e0b;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #020617;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 35px 15px;
+      font-size: 14px;
+    }
+
+    footer span {
+      color: #fbbf24;
+    }
+
+    @media (max-width: 900px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .related-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .menu {
+        gap: 14px;
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 85px 0;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .article {
+        padding: 26px;
+      }
+
+      .article img {
+        height: 240px;
+      }
+
+      .article h2 {
+        font-size: 27px;
+      }
+
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title h2,
+      .newsletter h2 {
+        font-size: 29px;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Smart Teacher <span>Toolkit</span></div>
+
+        <div class="menu">
+          <a href="index.html">Home</a>
+          <a href="blog.html">Blog</a>
+          <a href="resources.html">Resources</a>
+          <a href="index.html#materials">Materials</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Free 3rd Grade <span>Reading Comprehension Worksheet</span></h1>
+      <p>
+        A simple reading activity with a short passage, comprehension questions,
+        and an answer key for elementary classroom practice.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="article-layout">
+
+        <article class="article">
+          <span class="tag">Reading Resource</span>
+
+          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=80" alt="Reading comprehension materials">
+
+          <p>
+            Reading comprehension is an important part of elementary learning. This worksheet
+            is designed for 3rd grade students and can be used during reading practice,
+            small group work, independent work, homework, or review time.
+          </p>
+
+          <p>
+            The activity includes a short reading passage followed by simple questions that
+            help students practice understanding details, identifying the main idea, and
+            answering in complete sentences.
+          </p>
+
+          <div class="note-box">
+            <h3>Teacher Note</h3>
+            <p>
+              This resource is designed to be simple and flexible. Teachers can use it as a
+              quick classroom activity, a reading center task, or a short assessment after a reading lesson.
+            </p>
+          </div>
+
+          <h2>What Is Included?</h2>
+
+          <p>
+            This reading comprehension activity includes the main elements teachers usually need
+            for a clear and practical classroom task.
+          </p>
+
+          <ul>
+            <li>A short reading passage suitable for 3rd grade students.</li>
+            <li>Comprehension questions about the text.</li>
+            <li>Vocabulary practice based on the passage.</li>
+            <li>A short written response question.</li>
+            <li>A simple answer key for quick correction.</li>
+          </ul>
+
+          <h2>How Teachers Can Use This Worksheet</h2>
+
+          <p>
+            This worksheet can be used in several ways depending on the lesson objective and
+            the needs of the classroom.
+          </p>
+
+          <ol>
+            <li>Start by asking students to read the passage silently.</li>
+            <li>Read the passage again as a class or in small groups.</li>
+            <li>Ask students to underline important details in the text.</li>
+            <li>Let students answer the questions independently.</li>
+            <li>Review the answers together and discuss the main idea.</li>
+          </ol>
+
+          <h2>Suggested Classroom Use</h2>
+
+          <p>
+            The worksheet works well during a reading lesson, but it can also be used as a
+            warm-up activity, homework task, substitute teacher activity, or reading center resource.
+          </p>
+
+          <div class="worksheet-box">
+            <h3>Free Worksheet Preview</h3>
+            <p>
+              This section can later include a real PDF file for teachers to download.
+              For now, it represents the free reading comprehension resource area of the page.
+            </p>
+            <a href="#" class="btn btn-orange">Download Worksheet</a>
+          </div>
+
+          <h2>Skills Practiced</h2>
+
+          <p>
+            This activity helps students practice important reading skills in a simple and guided way.
+          </p>
+
+          <ul>
+            <li>Understanding a short text.</li>
+            <li>Finding important details.</li>
+            <li>Identifying the main idea.</li>
+            <li>Answering comprehension questions.</li>
+            <li>Writing complete sentence responses.</li>
+          </ul>
+
+          <h2>Tips for Differentiation</h2>
+
+          <p>
+            Teachers can adapt this activity depending on student level. For students who need support,
+            the passage can be read aloud before they answer the questions. For advanced students,
+            teachers can ask them to write an additional paragraph or create their own questions.
+          </p>
+
+          <h2>Final Teaching Idea</h2>
+
+          <p>
+            After completing the worksheet, ask students to share one important detail from the passage.
+            This helps them review the text, practice speaking, and strengthen comprehension through discussion.
+          </p>
+        </article>
+
+        <aside class="sidebar">
+
+          <div class="side-card">
+            <h3>Resource Details</h3>
+            <ul>
+              <li>Grade Level: 3rd Grade</li>
+              <li>Subject: Reading</li>
+              <li>Use: Classroom or Homework</li>
+              <li>Format: Printable Worksheet</li>
+              <li>Time: 15–25 minutes</li>
+            </ul>
+          </div>
+
+          <div class="side-card">
+            <h3>Best For</h3>
+            <p>
+              This resource is useful for teachers who need a simple reading activity for daily practice,
+              review, small groups, or independent work.
+            </p>
+          </div>
+
+          <div class="side-card">
+            <h3>More Resources</h3>
+            <ul>
+              <li>Reading comprehension passages</li>
+              <li>Vocabulary worksheets</li>
+              <li>Lesson plan templates</li>
+              <li>Classroom routine checklists</li>
+            </ul>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section related-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Related Teaching Resources</h2>
+        <p>
+          Explore more practical materials for elementary reading, planning, and classroom organization.
+        </p>
+      </div>
+
+      <div class="related-grid">
+
+        <div class="related-card">
+          <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1000&q=80" alt="Books and worksheets">
+          <div class="related-content">
+            <span>Worksheets</span>
+            <h3>Printable Worksheets for Elementary Classrooms</h3>
+            <p>
+              Simple worksheet ideas for reading, writing, vocabulary, and daily practice.
+            </p>
+          </div>
+        </div>
+
+        <div class="related-card">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80" alt="Lesson planning">
+          <div class="related-content">
+            <span>Planning</span>
+            <h3>Weekly Lesson Plan Template</h3>
+            <p>
+              A clear planning structure for organizing objectives, activities, and materials.
+            </p>
+          </div>
+        </div>
+
+        <div class="related-card">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=80" alt="Classroom organization">
+          <div class="related-content">
+            <span>Classroom</span>
+            <h3>Classroom Routine Checklist</h3>
+            <p>
+              A practical checklist to help organize daily routines and transitions.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <h2>Join the Free Teacher Resource Library</h2>
+    <p>
+      Receive worksheets, classroom printables, reading activities, lesson ideas,
+      and practical materials for elementary teaching.
+    </p>
+
+    <form class="newsletter-form">
+      <input type="email" placeholder="Enter your email address" required>
+      <button type="submit">Join Free</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2026 Smart Teacher Toolkit. All rights reserved.</p>
+    <p>Teaching resources for <span>elementary teachers</span></p>
+  </footer>
+
+</body>
+</html>
