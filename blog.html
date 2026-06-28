@@ -6,8 +6,6 @@
 
   <title>Blog | Smart Teacher Toolkit</title>
 
-  <meta name="description" content="Helpful teaching articles, worksheets, lesson planning ideas, classroom routines, and printable resources for elementary teachers." />
-
   <style>
     * {
       margin: 0;
@@ -171,6 +169,66 @@
       font-size: 14.5px;
     }
 
+    .featured {
+      background: #fff7ed;
+    }
+
+    .featured-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+      border: 1px solid #fed7aa;
+    }
+
+    .featured-box img {
+      height: 460px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .featured-content {
+      padding: 45px;
+    }
+
+    .featured-content span,
+    .blog-content span {
+      color: #2563eb;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    .featured-content h2 {
+      font-size: 36px;
+      color: #111827;
+      margin: 12px 0 16px;
+    }
+
+    .featured-content p {
+      color: #4b5563;
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 14px 26px;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
     .blog-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -201,13 +259,6 @@
       padding: 24px;
     }
 
-    .blog-content span {
-      color: #2563eb;
-      font-size: 13px;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-
     .blog-content h3 {
       font-size: 21px;
       margin: 10px 0;
@@ -223,73 +274,6 @@
     .read-more {
       color: #2563eb;
       font-weight: bold;
-    }
-
-    .featured {
-      background: #fff7ed;
-    }
-
-    .featured-box {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 45px;
-      align-items: center;
-      background: white;
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: 0 18px 45px rgba(0,0,0,0.08);
-      border: 1px solid #fed7aa;
-    }
-
-    .featured-box img {
-      height: 460px;
-      width: 100%;
-      object-fit: cover;
-    }
-
-    .featured-content {
-      padding: 45px;
-    }
-
-    .featured-content span {
-      color: #f59e0b;
-      font-weight: bold;
-      text-transform: uppercase;
-      font-size: 14px;
-    }
-
-    .featured-content h2 {
-      font-size: 36px;
-      color: #111827;
-      margin: 12px 0 16px;
-    }
-
-    .featured-content p {
-      color: #4b5563;
-      margin-bottom: 18px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #2563eb;
-      color: white;
-      padding: 14px 26px;
-      border-radius: 12px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #1d4ed8;
-      transform: translateY(-2px);
-    }
-
-    .btn-orange {
-      background: #f59e0b;
-    }
-
-    .btn-orange:hover {
-      background: #d97706;
     }
 
     .resource-strip {
@@ -309,6 +293,14 @@
       margin: 0 auto 25px;
       color: #e5e7eb;
       font-size: 17px;
+    }
+
+    .btn-orange {
+      background: #f59e0b;
+    }
+
+    .btn-orange:hover {
+      background: #d97706;
     }
 
     .newsletter {
@@ -379,17 +371,8 @@
         grid-template-columns: 1fr;
       }
 
-      .featured-box img {
-        height: 360px;
-      }
-
       .hero h1 {
         font-size: 42px;
-      }
-
-      .menu {
-        gap: 14px;
-        font-size: 14px;
       }
     }
 
@@ -417,21 +400,6 @@
         font-size: 34px;
       }
 
-      .hero p {
-        font-size: 16px;
-      }
-
-      .section-title h2,
-      .newsletter h2,
-      .resource-strip h2,
-      .featured-content h2 {
-        font-size: 29px;
-      }
-
-      .featured-content {
-        padding: 30px;
-      }
-
       .newsletter-form {
         flex-direction: column;
       }
@@ -452,7 +420,7 @@
           <a href="resources.html">Resources</a>
           <a href="index.html#materials">Materials</a>
           <a href="index.html#about">About</a>
-          <a href="index.html#contact">Contact</a>
+          <a href="contact.html">Contact</a>
         </div>
       </nav>
     </div>
@@ -509,7 +477,7 @@
     <div class="container">
       <div class="featured-box">
         <div>
-          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1000&q=80" alt="Reading materials and books">
+          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1000&q=80" alt="Reading materials">
         </div>
 
         <div class="featured-content">
@@ -523,7 +491,7 @@
             Teachers can use it during reading practice, small group work, homework,
             or as a quick classroom activity.
           </p>
-          <a href="reading-comprehension-worksheet.html" class="btn">Read Article</a>
+          <a href="#" class="btn">Read Article</a>
         </div>
       </div>
     </div>
@@ -539,21 +507,20 @@
       </div>
 
       <div class="blog-grid">
-
         <div class="blog-card">
-          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=80" alt="Students learning in classroom">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=80" alt="Students learning">
           <div class="blog-content">
             <span>Reading</span>
             <h3>Reading Comprehension Passages with Questions</h3>
             <p>
               Simple ways to use short reading passages to develop comprehension and classroom discussion.
             </p>
-            <a href="reading-comprehension-worksheet.html" class="read-more">Read More →</a>
+            <a href="#" class="read-more">Read More →</a>
           </div>
         </div>
 
         <div class="blog-card">
-          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80" alt="Lesson planning table">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80" alt="Lesson planning">
           <div class="blog-content">
             <span>Planning</span>
             <h3>Weekly Lesson Plan Template for Elementary Teachers</h3>
@@ -589,7 +556,7 @@
         </div>
 
         <div class="blog-card">
-          <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1000&q=80" alt="Teacher planning notebook">
+          <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1000&q=80" alt="Teacher planning">
           <div class="blog-content">
             <span>Organization</span>
             <h3>Simple Classroom Routine Checklist</h3>
@@ -611,7 +578,6 @@
             <a href="#" class="read-more">Read More →</a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -629,7 +595,6 @@
     <h2>Receive New Teaching Resources</h2>
     <p>
       Get worksheets, classroom printables, reading activities, and practical teaching ideas.
-      This form is visual for now and can be connected later to an email tool.
     </p>
 
     <form class="newsletter-form">
