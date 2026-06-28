@@ -2,12 +2,12 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import { getAuth, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "TON_API_KEY",
-  authDomain: "TON_PROJECT_ID.firebaseapp.com",
-  projectId: "TON_PROJECT_ID",
-  storageBucket: "TON_PROJECT_ID.appspot.com",
-  messagingSenderId: "TON_MESSAGING_SENDER_ID",
-  appId: "TON_APP_ID"
+  apiKey: "COLLE_ICI_API_KEY",
+  authDomain: "COLLE_ICI_AUTH_DOMAIN",
+  projectId: "COLLE_ICI_PROJECT_ID",
+  storageBucket: "COLLE_ICI_STORAGE_BUCKET",
+  messagingSenderId: "COLLE_ICI_MESSAGING_SENDER_ID",
+  appId: "COLLE_ICI_APP_ID"
 };
 
 const app = initializeApp(firebaseConfig);
