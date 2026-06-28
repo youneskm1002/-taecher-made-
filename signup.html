@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Create Account | Smart Teacher Toolkit</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)),
+        url("https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1f2937;
+      padding: 20px;
+    }
+
+    .auth-container {
+      width: 100%;
+      max-width: 460px;
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 42px;
+      box-shadow: 0 25px 70px rgba(0,0,0,0.25);
+      border: 1px solid #e5e7eb;
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 800;
+      color: #2563eb;
+      margin-bottom: 12px;
+    }
+
+    .logo span {
+      color: #f59e0b;
+    }
+
+    .auth-container h1 {
+      text-align: center;
+      font-size: 32px;
+      color: #111827;
+      margin-bottom: 10px;
+    }
+
+    .auth-container p {
+      text-align: center;
+      color: #6b7280;
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    .google-btn {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      color: #111827;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: 0.3s;
+    }
+
+    .google-btn:hover {
+      background: #f3f4f6;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 22px 0;
+      color: #9ca3af;
+      font-size: 14px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #e5e7eb;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      color: #374151;
+      margin-bottom: 8px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 15px;
+      border-radius: 12px;
+      border: 1px solid #d1d5db;
+      font-size: 15px;
+      outline: none;
+      background: #f9fafb;
+    }
+
+    .form-group input:focus {
+      border-color: #2563eb;
+      background: #ffffff;
+    }
+
+    .auth-btn {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      background: #2563eb;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .auth-btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .auth-message {
+      display: none;
+      padding: 13px;
+      border-radius: 12px;
+      margin-bottom: 18px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .auth-message.error {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .auth-message.success {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .bottom-link {
+      text-align: center;
+      margin-top: 22px;
+      color: #6b7280;
+      font-size: 15px;
+    }
+
+    .bottom-link a {
+      color: #2563eb;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .home-link {
+      display: block;
+      text-align: center;
+      margin-top: 18px;
+      color: #6b7280;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    @media (max-width: 520px) {
+      .auth-container {
+        padding: 30px 24px;
+      }
+
+      .auth-container h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="auth-container">
+    <div class="logo">Smart Teacher <span>Toolkit</span></div>
+
+    <h1>Create Account</h1>
+    <p>Create your account to access teaching resources and classroom materials.</p>
+
+    <div id="auth-message" class="auth-message"></div>
+
+    <button id="google-signup" class="google-btn">
+      Sign up with Google
+    </button>
+
+    <div class="divider">or create account with email</div>
+
+    <form id="signup-form">
+      <div class="form-group">
+        <label for="signup-name">Full Name</label>
+        <input type="text" id="signup-name" placeholder="Enter your name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="signup-email">Email Address</label>
+        <input type="email" id="signup-email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="signup-password">Password</label>
+        <input type="password" id="signup-password" placeholder="Create a password" required>
+      </div>
+
+      <button type="submit" class="auth-btn">Create Account</button>
+    </form>
+
+    <div class="bottom-link">
+      Already have an account?
+      <a href="login.html">Login</a>
+    </div>
+
+    <a href="index.html" class="home-link">← Back to Home</a>
+  </div>
+
+  <script type="module" src="auth.js"></script>
+
+</body>
+</html>
