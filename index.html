@@ -6,8 +6,6 @@
 
   <title>Smart Teacher Toolkit | Teaching Resources for Elementary Teachers</title>
 
-  <meta name="description" content="Smart Teacher Toolkit provides practical worksheets, lesson plan templates, classroom printables, reading activities, and helpful teaching resources for elementary teachers." />
-
   <style>
     * {
       margin: 0;
@@ -76,7 +74,8 @@
       transition: 0.3s;
     }
 
-    .menu a:hover {
+    .menu a:hover,
+    .menu .active {
       color: #2563eb;
     }
 
@@ -185,7 +184,8 @@
       align-items: center;
     }
 
-    .about img {
+    .about img,
+    .support img {
       border-radius: 24px;
       box-shadow: 0 20px 45px rgba(0,0,0,0.12);
       height: 430px;
@@ -193,13 +193,15 @@
       object-fit: cover;
     }
 
-    .about h2 {
+    .about h2,
+    .support h2 {
       font-size: 38px;
       margin-bottom: 18px;
       color: #111827;
     }
 
-    .about p {
+    .about p,
+    .support p {
       color: #4b5563;
       margin-bottom: 18px;
     }
@@ -238,62 +240,23 @@
       padding: 25px;
     }
 
-    .card-content h3 {
-      font-size: 22px;
-      color: #111827;
-      margin-bottom: 10px;
-    }
-
-    .card-content p {
-      color: #6b7280;
-      font-size: 15.5px;
-    }
-
-    .blog-section {
-      background: #ffffff;
-    }
-
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-
-    .blog-card {
-      background: white;
-      border-radius: 22px;
-      overflow: hidden;
-      border: 1px solid #e5e7eb;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    }
-
-    .blog-card img {
-      height: 220px;
-      width: 100%;
-      object-fit: cover;
-    }
-
-    .blog-content {
-      padding: 24px;
-    }
-
-    .blog-content span {
+    .card-content span {
       color: #2563eb;
       font-size: 13px;
       font-weight: bold;
       text-transform: uppercase;
     }
 
-    .blog-content h3 {
-      font-size: 21px;
-      margin: 10px 0;
+    .card-content h3 {
+      font-size: 22px;
       color: #111827;
+      margin: 10px 0;
     }
 
-    .blog-content p {
+    .card-content p {
       color: #6b7280;
-      font-size: 15px;
-      margin-bottom: 15px;
+      font-size: 15.5px;
+      margin-bottom: 14px;
     }
 
     .read-more {
@@ -329,67 +292,19 @@
       background: #fff7ed;
     }
 
-    .material-card {
-      background: white;
-      border-radius: 22px;
-      overflow: hidden;
-      border: 1px solid #fed7aa;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    }
-
-    .material-card img {
-      height: 220px;
-      width: 100%;
-      object-fit: cover;
-    }
-
-    .material-content {
-      padding: 24px;
-    }
-
-    .material-content h3 {
-      font-size: 21px;
-      color: #111827;
-      margin-bottom: 10px;
-    }
-
-    .material-content p {
-      color: #6b7280;
-      font-size: 15px;
-    }
-
-    .community {
+    .support {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 45px;
       align-items: center;
     }
 
-    .community img {
-      border-radius: 24px;
-      height: 430px;
-      width: 100%;
-      object-fit: cover;
-      box-shadow: 0 20px 45px rgba(0,0,0,0.12);
-    }
-
-    .community h2 {
-      font-size: 38px;
-      margin-bottom: 18px;
-      color: #111827;
-    }
-
-    .community p {
-      color: #4b5563;
-      margin-bottom: 16px;
-    }
-
-    .community ul {
+    .support ul {
       margin-left: 20px;
       color: #4b5563;
     }
 
-    .community li {
+    .support li {
       margin-bottom: 10px;
     }
 
@@ -450,12 +365,11 @@
 
     @media (max-width: 900px) {
       .about,
-      .community {
+      .support {
         grid-template-columns: 1fr;
       }
 
-      .grid-3,
-      .blog-grid {
+      .grid-3 {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -492,14 +406,13 @@
         font-size: 16px;
       }
 
-      .grid-3,
-      .blog-grid {
+      .grid-3 {
         grid-template-columns: 1fr;
       }
 
       .section-title h2,
       .about h2,
-      .community h2,
+      .support h2,
       .freebie h2 {
         font-size: 29px;
       }
@@ -527,18 +440,18 @@
         <div class="logo">Smart Teacher <span>Toolkit</span></div>
 
         <div class="menu">
-          <a href="index.html">Home</a>
-          <a href="#about">About</a>
-          <a href="resources.html">Resources</a>
+          <a href="index.html" class="active">Home</a>
           <a href="blog.html">Blog</a>
+          <a href="resources.html">Resources</a>
           <a href="#materials">Materials</a>
-          <a href="#contact">Contact</a>
+          <a href="#about">About</a>
+          <a href="contact.html">Contact</a>
         </div>
       </nav>
     </div>
   </header>
 
-  <section class="hero" id="home">
+  <section class="hero">
 
     <video class="hero-video" autoplay muted loop playsinline>
       <source src="teacher-video.mp4" type="video/mp4">
@@ -566,7 +479,7 @@
     <div class="container">
       <div class="about">
         <div>
-          <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1000&q=80" alt="Teacher working with classroom materials">
+          <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1000&q=80" alt="Teacher working with students">
         </div>
 
         <div>
@@ -576,7 +489,7 @@
             with simple, useful, and classroom-ready resources.
           </p>
           <p>
-            Here, teachers can find worksheets, lesson planning ideas, classroom routines, reading activities,
+            Teachers can find worksheets, lesson planning ideas, classroom routines, reading activities,
             printable materials, and practical tips that can be used directly in the classroom.
           </p>
           <p>
@@ -588,7 +501,7 @@
     </div>
   </section>
 
-  <section class="section resources" id="resources">
+  <section class="section resources">
     <div class="container">
       <div class="section-title">
         <h2>Featured Teaching Resources</h2>
@@ -600,39 +513,45 @@
 
       <div class="grid-3">
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1000&q=80" alt="Printable worksheets and books">
+          <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1000&q=80" alt="Printable worksheets">
           <div class="card-content">
+            <span>Worksheets</span>
             <h3>Printable Worksheets</h3>
             <p>
               Reading, writing, math, and comprehension worksheets for elementary students.
             </p>
+            <a href="resources.html" class="read-more">View Resources →</a>
           </div>
         </div>
 
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80" alt="Lesson planning desk">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80" alt="Lesson planning">
           <div class="card-content">
+            <span>Planning</span>
             <h3>Lesson Plan Templates</h3>
             <p>
               Simple templates to help teachers prepare clear, organized, and effective lessons.
             </p>
+            <a href="resources.html" class="read-more">View Resources →</a>
           </div>
         </div>
 
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=80" alt="Students learning in classroom">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=80" alt="Classroom activities">
           <div class="card-content">
+            <span>Activities</span>
             <h3>Classroom Activities</h3>
             <p>
               Engaging activities for reading, writing, vocabulary, teamwork, and classroom practice.
             </p>
+            <a href="resources.html" class="read-more">View Resources →</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section blog-section" id="blog">
+  <section class="section">
     <div class="container">
       <div class="section-title">
         <h2>Latest Teaching Articles</h2>
@@ -642,24 +561,24 @@
         </p>
       </div>
 
-      <div class="blog-grid">
-        <div class="blog-card">
+      <div class="grid-3">
+        <div class="card">
           <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1000&q=80" alt="Reading materials">
-          <div class="blog-content">
+          <div class="card-content">
             <span>Reading</span>
-            <h3>Free 3rd Grade Reading Comprehension Worksheet</h3>
+            <h3>Reading Comprehension Worksheet</h3>
             <p>
               A simple reading activity with a short passage, comprehension questions, and an answer key.
             </p>
-            <a href="reading-comprehension-worksheet.html" class="read-more">Read More →</a>
+            <a href="blog.html" class="read-more">Read More →</a>
           </div>
         </div>
 
-        <div class="blog-card">
-          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80" alt="Lesson planning table">
-          <div class="blog-content">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80" alt="Teacher planning lessons">
+          <div class="card-content">
             <span>Planning</span>
-            <h3>Weekly Lesson Plan Template for Elementary Teachers</h3>
+            <h3>Weekly Lesson Plan Template</h3>
             <p>
               A clear weekly planning structure to help teachers prepare lessons with confidence.
             </p>
@@ -667,11 +586,11 @@
           </div>
         </div>
 
-        <div class="blog-card">
+        <div class="card">
           <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=80" alt="Classroom organization">
-          <div class="blog-content">
+          <div class="card-content">
             <span>Classroom</span>
-            <h3>Classroom Management Printables for New Teachers</h3>
+            <h3>Classroom Routine Checklist</h3>
             <p>
               Simple classroom rules, routines, and printable tools to support organization.
             </p>
@@ -690,7 +609,7 @@
           Get a free mini pack including a lesson plan template, a reading worksheet,
           and a classroom routine checklist.
         </p>
-        <a href="#contact" class="btn btn-orange">Get the Free Pack</a>
+        <a href="contact.html" class="btn btn-orange">Request the Free Pack</a>
       </div>
     </div>
   </section>
@@ -705,9 +624,10 @@
       </div>
 
       <div class="grid-3">
-        <div class="material-card">
-          <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1000&q=80" alt="Teacher planning notebook">
-          <div class="material-content">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1000&q=80" alt="Planning materials">
+          <div class="card-content">
+            <span>Planning</span>
             <h3>Lesson Planning Pack</h3>
             <p>
               Weekly lesson plan templates, daily planning pages, and simple organization tools.
@@ -715,9 +635,10 @@
           </div>
         </div>
 
-        <div class="material-card">
-          <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1000&q=80" alt="Books and worksheets">
-          <div class="material-content">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1000&q=80" alt="Reading resources">
+          <div class="card-content">
+            <span>Reading</span>
             <h3>Reading Comprehension Pack</h3>
             <p>
               Printable reading passages with questions and answer keys for elementary learners.
@@ -725,9 +646,10 @@
           </div>
         </div>
 
-        <div class="material-card">
-          <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=80" alt="Classroom organization resources">
-          <div class="material-content">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=80" alt="Classroom resources">
+          <div class="card-content">
+            <span>Classroom</span>
             <h3>Classroom Routine Kit</h3>
             <p>
               Classroom rules, routines, behavior charts, and organization printables.
@@ -738,9 +660,9 @@
     </div>
   </section>
 
-  <section class="section" id="community">
+  <section class="section">
     <div class="container">
-      <div class="community">
+      <div class="support">
         <div>
           <h2>Simple Support for Daily Teaching</h2>
           <p>
@@ -763,11 +685,10 @@
     </div>
   </section>
 
-  <section class="newsletter" id="contact">
+  <section class="newsletter">
     <h2>Join the Free Teacher Resource Library</h2>
     <p>
       Receive worksheets, classroom printables, lesson ideas, and practical teaching resources.
-      This form is visual for now and can be connected later to an email tool.
     </p>
 
     <form class="newsletter-form">
