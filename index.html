@@ -4,11 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Smart Teacher Toolkit | Teacher-Made Resources & AI Tools</title>
+  <title>Smart Teacher Toolkit | Teacher-Made Resources for Elementary Teachers</title>
 
-  <meta name="description" content="Smart Teacher Toolkit provides ready-to-use teacher-made worksheets, lesson plans, classroom printables, and AI tools for busy elementary teachers." />
-
-  <meta name="keywords" content="teacher made resources, teacher made worksheets, teacher printables, elementary teacher resources, AI tools for teachers, lesson plan templates, classroom management printables" />
+  <meta name="description" content="Smart Teacher Toolkit offers teacher-made worksheets, lesson plans, classroom printables, and AI tools for elementary teachers." />
 
   <style>
     * {
@@ -20,7 +18,7 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f8fbff;
+      background: #f8fafc;
       color: #1f2937;
       line-height: 1.7;
     }
@@ -30,9 +28,14 @@
       color: inherit;
     }
 
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     .container {
       width: 90%;
-      max-width: 1150px;
+      max-width: 1180px;
       margin: auto;
     }
 
@@ -52,7 +55,7 @@
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 25px;
       font-weight: 800;
       color: #2563eb;
     }
@@ -78,32 +81,35 @@
     }
 
     .hero {
-      background: linear-gradient(135deg, #dbeafe, #fff7ed);
-      padding: 90px 0;
+      min-height: 88vh;
+      background:
+        linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.62)),
+        url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      align-items: center;
     }
 
     .hero-content {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      align-items: center;
-      gap: 50px;
+      max-width: 760px;
     }
 
     .hero h1 {
-      font-size: 48px;
-      line-height: 1.15;
-      color: #111827;
+      font-size: 56px;
+      line-height: 1.12;
       margin-bottom: 20px;
     }
 
     .hero h1 span {
-      color: #2563eb;
+      color: #fbbf24;
     }
 
     .hero p {
-      font-size: 18px;
-      color: #4b5563;
-      margin-bottom: 28px;
+      font-size: 19px;
+      color: #e5e7eb;
+      margin-bottom: 30px;
     }
 
     .btn {
@@ -122,35 +128,16 @@
       transform: translateY(-2px);
     }
 
-    .btn-secondary {
+    .btn-orange {
       background: #f59e0b;
     }
 
-    .btn-secondary:hover {
+    .btn-orange:hover {
       background: #d97706;
     }
 
-    .hero-card {
-      background: white;
-      padding: 32px;
-      border-radius: 24px;
-      box-shadow: 0 20px 50px rgba(37, 99, 235, 0.15);
-      text-align: center;
-    }
-
-    .hero-card .icon {
-      font-size: 70px;
-      margin-bottom: 15px;
-    }
-
-    .hero-card h3 {
-      font-size: 24px;
-      color: #111827;
-      margin-bottom: 12px;
-    }
-
     .section {
-      padding: 80px 0;
+      padding: 85px 0;
     }
 
     .section-title {
@@ -159,16 +146,46 @@
     }
 
     .section-title h2 {
-      font-size: 36px;
+      font-size: 38px;
       color: #111827;
       margin-bottom: 12px;
     }
 
     .section-title p {
       color: #6b7280;
-      font-size: 17px;
-      max-width: 700px;
+      max-width: 720px;
       margin: auto;
+      font-size: 17px;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .about img {
+      border-radius: 24px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+      height: 430px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .about h2 {
+      font-size: 38px;
+      margin-bottom: 18px;
+      color: #111827;
+    }
+
+    .about p {
+      color: #4b5563;
+      margin-bottom: 18px;
+    }
+
+    .features {
+      background: #eff6ff;
     }
 
     .grid-3 {
@@ -179,36 +196,37 @@
 
     .card {
       background: white;
-      padding: 28px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
       transition: 0.3s;
-      border: 1px solid #eef2ff;
+      border: 1px solid #e5e7eb;
     }
 
     .card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.09);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.1);
     }
 
-    .card .emoji {
-      font-size: 42px;
-      margin-bottom: 16px;
+    .card img {
+      height: 210px;
+      width: 100%;
+      object-fit: cover;
     }
 
-    .card h3 {
+    .card-content {
+      padding: 25px;
+    }
+
+    .card-content h3 {
       font-size: 22px;
       color: #111827;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
-    .card p {
+    .card-content p {
       color: #6b7280;
       font-size: 15.5px;
-    }
-
-    .blue-section {
-      background: #eff6ff;
     }
 
     .blog-grid {
@@ -219,20 +237,16 @@
 
     .blog-card {
       background: white;
-      border-radius: 20px;
+      border-radius: 22px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
       border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
     }
 
-    .blog-img {
-      height: 170px;
-      background: linear-gradient(135deg, #2563eb, #f59e0b);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 54px;
-      color: white;
+    .blog-card img {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
     }
 
     .blog-content {
@@ -241,14 +255,14 @@
 
     .blog-content span {
       color: #2563eb;
-      font-weight: bold;
       font-size: 13px;
+      font-weight: bold;
       text-transform: uppercase;
     }
 
     .blog-content h3 {
-      margin: 10px 0;
       font-size: 21px;
+      margin: 10px 0;
       color: #111827;
     }
 
@@ -261,77 +275,87 @@
     .read-more {
       color: #2563eb;
       font-weight: bold;
-      font-size: 15px;
     }
 
     .freebie {
-      background: linear-gradient(135deg, #2563eb, #1e40af);
+      background:
+        linear-gradient(rgba(37, 99, 235, 0.92), rgba(30, 64, 175, 0.92)),
+        url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      border-radius: 30px;
+      padding: 65px;
       color: white;
-      border-radius: 28px;
-      padding: 55px;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      align-items: center;
-      gap: 30px;
+      text-align: center;
     }
 
     .freebie h2 {
-      font-size: 36px;
+      font-size: 40px;
       margin-bottom: 15px;
     }
 
     .freebie p {
-      font-size: 17px;
-      opacity: 0.95;
-      margin-bottom: 25px;
+      max-width: 760px;
+      margin: 0 auto 30px;
+      color: #e5e7eb;
+      font-size: 18px;
     }
 
-    .freebie-box {
+    .products {
+      background: #fff7ed;
+    }
+
+    .product-card {
       background: white;
-      color: #111827;
-      padding: 30px;
       border-radius: 22px;
-      text-align: center;
-    }
-
-    .freebie-box h3 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    .freebie-box p {
-      color: #6b7280;
-      font-size: 15px;
-    }
-
-    .shop-card {
-      background: white;
-      padding: 28px;
-      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid #fed7aa;
       box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-      border: 1px solid #e5e7eb;
+    }
+
+    .product-card img {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .product-content {
+      padding: 24px;
     }
 
     .price {
-      font-size: 28px;
       color: #2563eb;
+      font-size: 27px;
       font-weight: bold;
-      margin: 12px 0;
+      margin: 10px 0 18px;
     }
 
-    .facebook-plan {
-      background: white;
-      padding: 35px;
-      border-radius: 22px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    .facebook {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
     }
 
-    .facebook-plan ul {
+    .facebook img {
+      border-radius: 24px;
+      height: 430px;
+      width: 100%;
+      object-fit: cover;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+    }
+
+    .facebook h2 {
+      font-size: 38px;
+      margin-bottom: 18px;
+    }
+
+    .facebook ul {
       margin-left: 20px;
       color: #4b5563;
     }
 
-    .facebook-plan li {
+    .facebook li {
       margin-bottom: 10px;
     }
 
@@ -339,12 +363,12 @@
       background: #111827;
       color: white;
       text-align: center;
-      padding: 70px 20px;
+      padding: 75px 20px;
     }
 
     .newsletter h2 {
-      font-size: 34px;
-      margin-bottom: 15px;
+      font-size: 36px;
+      margin-bottom: 14px;
     }
 
     .newsletter p {
@@ -355,21 +379,21 @@
 
     .newsletter-form {
       display: flex;
-      max-width: 520px;
+      max-width: 540px;
       margin: auto;
       gap: 10px;
     }
 
     .newsletter-form input {
       flex: 1;
-      padding: 15px;
+      padding: 16px;
       border-radius: 10px;
       border: none;
       font-size: 15px;
     }
 
     .newsletter-form button {
-      padding: 15px 22px;
+      padding: 16px 25px;
       border: none;
       border-radius: 10px;
       background: #f59e0b;
@@ -379,22 +403,21 @@
     }
 
     footer {
-      background: #0f172a;
+      background: #020617;
       color: #cbd5e1;
-      padding: 35px 0;
       text-align: center;
+      padding: 35px 15px;
       font-size: 14px;
     }
 
     footer span {
-      color: #f59e0b;
+      color: #fbbf24;
     }
 
     @media (max-width: 900px) {
-      .hero-content,
-      .freebie {
+      .about,
+      .facebook {
         grid-template-columns: 1fr;
-        text-align: center;
       }
 
       .grid-3,
@@ -403,7 +426,7 @@
       }
 
       .hero h1 {
-        font-size: 38px;
+        font-size: 42px;
       }
 
       .menu {
@@ -423,21 +446,24 @@
         justify-content: center;
       }
 
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
       .grid-3,
       .blog-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        padding: 60px 0;
-      }
-
-      .hero h1 {
-        font-size: 32px;
-      }
-
-      .section-title h2 {
-        font-size: 28px;
+      .section-title h2,
+      .about h2,
+      .facebook h2,
+      .freebie h2 {
+        font-size: 29px;
       }
 
       .newsletter-form {
@@ -445,7 +471,7 @@
       }
 
       .freebie {
-        padding: 35px 25px;
+        padding: 40px 25px;
       }
     }
   </style>
@@ -457,12 +483,13 @@
     <div class="container">
       <nav>
         <div class="logo">Smart Teacher <span>Toolkit</span></div>
+
         <div class="menu">
           <a href="#home">Home</a>
+          <a href="#about">About</a>
           <a href="#resources">Resources</a>
           <a href="#blog">Blog</a>
           <a href="#shop">Shop</a>
-          <a href="#facebook">Facebook</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
@@ -472,131 +499,131 @@
   <section class="hero" id="home">
     <div class="container">
       <div class="hero-content">
+        <h1>Teacher-Made Resources for <span>Busy Elementary Teachers</span></h1>
+        <p>
+          Discover ready-to-use worksheets, lesson plan templates, classroom printables,
+          and AI teaching tools designed to help elementary teachers save time and create
+          engaging learning experiences.
+        </p>
+
+        <a href="#resources" class="btn">Explore Free Resources</a>
+        <a href="#blog" class="btn btn-orange">Read the Blog</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about">
         <div>
-          <h1>Teacher-Made Resources for <span>Busy Elementary Teachers</span></h1>
-          <p>
-            Discover ready-to-use worksheets, lesson plan templates, classroom printables,
-            and AI tools designed to help teachers save time and make learning more engaging.
-          </p>
-          <a href="#resources" class="btn">Explore Resources</a>
-          <a href="#blog" class="btn btn-secondary">Read the Blog</a>
+          <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1000&q=80" alt="Teacher working with classroom materials">
         </div>
 
-        <div class="hero-card">
-          <div class="icon">📚</div>
-          <h3>Free Teacher Toolkit</h3>
+        <div>
+          <h2>A Practical Blog for Elementary Teachers</h2>
           <p>
-            Download practical classroom resources, printable worksheets, and smart AI prompts
-            for lesson planning.
+            Smart Teacher Toolkit is a professional educational blog created to support
+            elementary teachers with simple, useful, and classroom-ready resources.
           </p>
+          <p>
+            The goal is to help teachers save preparation time by offering printable worksheets,
+            lesson planning ideas, classroom management tools, and smart AI prompts for teaching.
+          </p>
+          <p>
+            This blog is also designed as a professional portfolio project showing skills in
+            educational content creation, SEO, digital resources, and online communication.
+          </p>
+          <a href="#shop" class="btn">View Digital Products</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="resources">
+  <section class="section features" id="resources">
     <div class="container">
       <div class="section-title">
-        <h2>What You Will Find Here</h2>
+        <h2>Featured Teacher Resources</h2>
         <p>
-          A professional resource hub for elementary teachers looking for simple,
-          printable, and classroom-ready materials.
+          A clear collection of teacher-made resources that can attract traffic from Google
+          and be shared easily on Facebook, groups, and Reels.
         </p>
       </div>
 
       <div class="grid-3">
         <div class="card">
-          <div class="emoji">📝</div>
-          <h3>Worksheets</h3>
-          <p>
-            Printable reading, writing, math, and comprehension worksheets for elementary students.
-          </p>
+          <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1000&q=80" alt="Printable worksheets and books">
+          <div class="card-content">
+            <h3>Printable Worksheets</h3>
+            <p>
+              Reading, writing, math, and comprehension worksheets for elementary students.
+            </p>
+          </div>
         </div>
 
         <div class="card">
-          <div class="emoji">📅</div>
-          <h3>Lesson Plans</h3>
-          <p>
-            Simple lesson plan templates and weekly planning ideas for busy teachers.
-          </p>
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80" alt="Lesson planning desk">
+          <div class="card-content">
+            <h3>Lesson Plan Templates</h3>
+            <p>
+              Simple lesson plan templates to help teachers prepare organized weekly lessons.
+            </p>
+          </div>
         </div>
 
         <div class="card">
-          <div class="emoji">🤖</div>
-          <h3>AI Tools</h3>
-          <p>
-            ChatGPT prompts and AI tools to create activities, quizzes, and lesson ideas faster.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="emoji">🎨</div>
-          <h3>Classroom Printables</h3>
-          <p>
-            Posters, classroom rules, routines, labels, behavior charts, and visual supports.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="emoji">🧠</div>
-          <h3>Teaching Tips</h3>
-          <p>
-            Practical classroom management tips, organization ideas, and beginner teacher advice.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="emoji">🎁</div>
-          <h3>Free Resources</h3>
-          <p>
-            Download free PDFs and templates to test before exploring premium bundles.
-          </p>
+          <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=80" alt="Laptop with planning notes">
+          <div class="card-content">
+            <h3>AI Tools for Teachers</h3>
+            <p>
+              ChatGPT prompts and AI ideas to create activities, quizzes, and class resources faster.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section blue-section" id="blog">
+  <section class="section" id="blog">
     <div class="container">
       <div class="section-title">
-        <h2>Latest Blog Posts</h2>
+        <h2>Latest Blog Articles</h2>
         <p>
-          SEO-friendly articles designed to attract teachers from Google and Facebook.
+          These article examples are designed for SEO and can later become real blog posts.
         </p>
       </div>
 
       <div class="blog-grid">
         <div class="blog-card">
-          <div class="blog-img">📖</div>
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=80" alt="Students learning in classroom">
           <div class="blog-content">
             <span>Worksheets</span>
             <h3>Free 3rd Grade Reading Comprehension Worksheet</h3>
             <p>
-              A simple printable worksheet with a short passage, questions, and answer key.
+              A simple printable resource with a short reading passage, questions, and answer key.
             </p>
             <a href="#" class="read-more">Read More →</a>
           </div>
         </div>
 
         <div class="blog-card">
-          <div class="blog-img">🤖</div>
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=80" alt="Technology for teachers">
           <div class="blog-content">
             <span>AI for Teachers</span>
             <h3>50 ChatGPT Prompts for Elementary Teachers</h3>
             <p>
-              Save time with ready-to-use prompts for lesson planning, quizzes, and activities.
+              Useful prompts for lesson planning, quizzes, activities, rubrics, and classroom ideas.
             </p>
             <a href="#" class="read-more">Read More →</a>
           </div>
         </div>
 
         <div class="blog-card">
-          <div class="blog-img">🏫</div>
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=80" alt="Creative classroom planning">
           <div class="blog-content">
             <span>Classroom</span>
             <h3>Classroom Management Printables for New Teachers</h3>
             <p>
-              Practical posters and routines to help organize your classroom from day one.
+              Posters, routines, and printable classroom rules to support classroom organization.
             </p>
             <a href="#" class="read-more">Read More →</a>
           </div>
@@ -608,93 +635,82 @@
   <section class="section">
     <div class="container">
       <div class="freebie">
-        <div>
-          <h2>Download a Free Teacher Resource Pack</h2>
-          <p>
-            Get a free mini pack including a lesson plan template, a reading worksheet,
-            and 10 AI prompts for classroom activities.
-          </p>
-          <a href="#contact" class="btn btn-secondary">Get the Free Pack</a>
-        </div>
-
-        <div class="freebie-box">
-          <h3>Free PDF Pack</h3>
-          <p>Lesson Plan Template</p>
-          <p>Reading Worksheet</p>
-          <p>10 AI Prompts</p>
-        </div>
+        <h2>Download a Free Teacher Resource Pack</h2>
+        <p>
+          Get a free mini pack including a lesson plan template, a reading worksheet,
+          and 10 AI prompts for classroom activities.
+        </p>
+        <a href="#contact" class="btn btn-orange">Get the Free Pack</a>
       </div>
     </div>
   </section>
 
-  <section class="section" id="shop">
+  <section class="section products" id="shop">
     <div class="container">
       <div class="section-title">
-        <h2>Digital Products</h2>
+        <h2>Digital Products for Teachers</h2>
         <p>
-          Start with simple digital products that can be sold later through Gumroad,
-          Payhip, TPT, or your own WordPress shop.
+          These are example products that you can later create and sell through Gumroad,
+          Payhip, TPT, WooCommerce, or your own blog.
         </p>
       </div>
 
       <div class="grid-3">
-        <div class="shop-card">
-          <h3>50 ChatGPT Prompts for Teachers</h3>
-          <p>
-            A practical PDF pack to help teachers create lesson plans, quizzes,
-            rubrics, and classroom activities.
-          </p>
-          <div class="price">$5</div>
-          <a href="#" class="btn">View Product</a>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1000&q=80" alt="Teacher planning notebook">
+          <div class="product-content">
+            <h3>50 ChatGPT Prompts for Teachers</h3>
+            <p>A practical PDF pack for lesson planning, activities, quizzes, and worksheets.</p>
+            <div class="price">$5</div>
+            <a href="#" class="btn">View Product</a>
+          </div>
         </div>
 
-        <div class="shop-card">
-          <h3>Reading Comprehension Pack</h3>
-          <p>
-            10 printable reading passages with questions and answer keys for elementary students.
-          </p>
-          <div class="price">$9</div>
-          <a href="#" class="btn">View Product</a>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1000&q=80" alt="Reading resources for teachers">
+          <div class="product-content">
+            <h3>Reading Comprehension Pack</h3>
+            <p>10 printable reading passages with questions and answer keys.</p>
+            <div class="price">$9</div>
+            <a href="#" class="btn">View Product</a>
+          </div>
         </div>
 
-        <div class="shop-card">
-          <h3>Classroom Management Kit</h3>
-          <p>
-            Classroom rules posters, routines, behavior charts, and organization printables.
-          </p>
-          <div class="price">$12</div>
-          <a href="#" class="btn">View Product</a>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=80" alt="Classroom organization resources">
+          <div class="product-content">
+            <h3>Classroom Management Kit</h3>
+            <p>Posters, routines, classroom rules, and behavior management printables.</p>
+            <div class="price">$12</div>
+            <a href="#" class="btn">View Product</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section blue-section" id="facebook">
+  <section class="section" id="facebook">
     <div class="container">
-      <div class="section-title">
-        <h2>Facebook Growth Strategy</h2>
-        <p>
-          Use Facebook Pages, Groups, Reels, and free resources to attract teachers
-          and send traffic to the blog.
-        </p>
-      </div>
+      <div class="facebook">
+        <div>
+          <h2>Grow the Blog with Facebook</h2>
+          <p>
+            Facebook can help this blog attract teachers through short videos, free resources,
+            and useful classroom tips.
+          </p>
+          <br>
+          <ul>
+            <li>Publish Reels about quick teaching ideas.</li>
+            <li>Share free worksheets and printable resources.</li>
+            <li>Create a Facebook group for elementary teachers.</li>
+            <li>Use posts to send visitors to blog articles.</li>
+            <li>Promote digital products after building trust.</li>
+          </ul>
+        </div>
 
-      <div class="facebook-plan">
-        <h3>Weekly Content Plan</h3>
-        <br />
-        <ul>
-          <li><strong>Monday:</strong> Share a free worksheet or printable.</li>
-          <li><strong>Tuesday:</strong> Post a Reel: “3 quick classroom activity ideas”.</li>
-          <li><strong>Wednesday:</strong> Share a teaching tip or classroom management idea.</li>
-          <li><strong>Thursday:</strong> Post an AI prompt tutorial for teachers.</li>
-          <li><strong>Friday:</strong> Promote a blog article with a useful freebie.</li>
-          <li><strong>Weekend:</strong> Ask teachers a question to increase engagement.</li>
-        </ul>
-        <br />
-        <p>
-          The goal is simple: Facebook content attracts attention, free resources build trust,
-          and the blog becomes the professional platform for long-term SEO traffic.
-        </p>
+        <div>
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80" alt="Team working with social media strategy">
+        </div>
       </div>
     </div>
   </section>
@@ -702,27 +718,19 @@
   <section class="newsletter" id="contact">
     <h2>Join the Free Teacher Resource Library</h2>
     <p>
-      Get weekly worksheets, printable classroom resources, and AI teaching ideas.
-      This form is a visual example. To make it work, connect it later with Mailchimp,
-      ConvertKit, Brevo, or another email tool.
+      Get weekly worksheets, classroom printables, lesson ideas, and AI teaching tips.
+      This form is only visual now. Later, you can connect it with Mailchimp, Brevo, or ConvertKit.
     </p>
 
     <form class="newsletter-form">
-      <input type="email" placeholder="Enter your email address" required />
+      <input type="email" placeholder="Enter your email address" required>
       <button type="submit">Join Free</button>
     </form>
   </section>
 
   <footer>
-    <div class="container">
-      <p>
-        © 2026 Smart Teacher Toolkit. All rights reserved.  
-        Built for a professional educational blog and portfolio project.
-      </p>
-      <p>
-        Niche: <span>Teacher-Made Resources & AI Tools for Elementary Teachers</span>
-      </p>
-    </div>
+    <p>© 2026 Smart Teacher Toolkit. All rights reserved.</p>
+    <p>Professional blog project: <span>Teacher-Made Resources & AI Tools for Elementary Teachers</span></p>
   </footer>
 
 </body>
