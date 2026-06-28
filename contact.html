@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Contact | Smart Teacher Toolkit</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8fafc;
+      color: #1f2937;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      color: #2563eb;
+    }
+
+    .logo span {
+      color: #f59e0b;
+    }
+
+    .menu {
+      display: flex;
+      gap: 22px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .menu a {
+      color: #374151;
+      transition: 0.3s;
+    }
+
+    .menu a:hover,
+    .menu .active {
+      color: #2563eb;
+    }
+
+    .hero {
+      background:
+        linear-gradient(rgba(15, 23, 42, 0.76), rgba(15, 23, 42, 0.72)),
+        url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 115px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: #fbbf24;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      color: #e5e7eb;
+      font-size: 18px;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .contact-info,
+    .contact-form {
+      background: white;
+      padding: 40px;
+      border-radius: 24px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+    }
+
+    .contact-info h2,
+    .contact-form h2 {
+      font-size: 34px;
+      color: #111827;
+      margin-bottom: 18px;
+    }
+
+    .contact-info p,
+    .contact-form p {
+      color: #4b5563;
+      margin-bottom: 18px;
+    }
+
+    .info-box {
+      background: #eff6ff;
+      border-left: 5px solid #2563eb;
+      padding: 20px;
+      border-radius: 14px;
+      margin: 22px 0;
+    }
+
+    .info-box h3 {
+      color: #1e40af;
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      color: #374151;
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      font-size: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      outline: none;
+      background: #f9fafb;
+    }
+
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 14px 26px;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .resources-section {
+      background: #eff6ff;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #6b7280;
+      max-width: 720px;
+      margin: auto;
+      font-size: 17px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 22px;
+      text-align: center;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.1);
+    }
+
+    .card .icon {
+      font-size: 44px;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      font-size: 21px;
+      color: #111827;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #6b7280;
+      font-size: 15px;
+    }
+
+    .newsletter {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 75px 20px;
+    }
+
+    .newsletter h2 {
+      font-size: 36px;
+      margin-bottom: 14px;
+    }
+
+    .newsletter p {
+      color: #d1d5db;
+      max-width: 650px;
+      margin: 0 auto 25px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      max-width: 540px;
+      margin: auto;
+      gap: 10px;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 16px;
+      border-radius: 10px;
+      border: none;
+      font-size: 15px;
+    }
+
+    .newsletter-form button {
+      padding: 16px 25px;
+      border: none;
+      border-radius: 10px;
+      background: #f59e0b;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #020617;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 35px 15px;
+      font-size: 14px;
+    }
+
+    footer span {
+      color: #fbbf24;
+    }
+
+    @media (max-width: 900px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3 {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 85px 0;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-info,
+      .contact-form {
+        padding: 28px;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Smart Teacher <span>Toolkit</span></div>
+
+        <div class="menu">
+          <a href="index.html">Home</a>
+          <a href="blog.html">Blog</a>
+          <a href="resources.html">Resources</a>
+          <a href="index.html#materials">Materials</a>
+          <a href="index.html#about">About</a>
+          <a href="contact.html" class="active">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Contact <span>Smart Teacher Toolkit</span></h1>
+      <p>
+        Have a question, suggestion, or resource request? We would be happy to hear from you.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-layout">
+
+        <div class="contact-info">
+          <h2>Get in Touch</h2>
+          <p>
+            Smart Teacher Toolkit is created to support elementary teachers with practical
+            classroom materials, printable worksheets, lesson planning resources, and helpful teaching ideas.
+          </p>
+
+          <p>
+            You can use this page to request a resource, ask about classroom materials,
+            or suggest a topic that would be useful for teachers.
+          </p>
+
+          <div class="info-box">
+            <h3>Resource Requests</h3>
+            <p>
+              Teachers can suggest worksheet topics, reading activities, planning templates,
+              or classroom routine materials.
+            </p>
+          </div>
+
+          <div class="info-box">
+            <h3>Teaching Support</h3>
+            <p>
+              Share the type of classroom resource you need, the grade level, and the subject area.
+            </p>
+          </div>
+
+          <div class="info-box">
+            <h3>General Questions</h3>
+            <p>
+              For questions about available resources or future materials, send a short message using the form.
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h2>Send a Message</h2>
+          <p>
+            Complete the form below with your message or resource request.
+          </p>
+
+          <form>
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="topic">Message Topic</label>
+              <select id="topic" name="topic">
+                <option>Worksheet Request</option>
+                <option>Lesson Planning Resource</option>
+                <option>Reading Activity</option>
+                <option>Classroom Routine</option>
+                <option>General Question</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section resources-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>What You Can Request</h2>
+        <p>
+          Share your classroom needs and suggest the resources that would help you most.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon">📝</div>
+          <h3>Worksheets</h3>
+          <p>
+            Reading, writing, vocabulary, math, and comprehension worksheets.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📅</div>
+          <h3>Lesson Plans</h3>
+          <p>
+            Weekly planning templates, daily lesson pages, and preparation tools.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🏫</div>
+          <h3>Classroom Routines</h3>
+          <p>
+            Classroom rules, routine checklists, behavior charts, and organization printables.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <h2>Join the Free Teacher Resource Library</h2>
+    <p>
+      Receive worksheets, classroom printables, reading activities, lesson ideas,
+      and practical materials for elementary teaching.
+    </p>
+
+    <form class="newsletter-form">
+      <input type="email" placeholder="Enter your email address" required>
+      <button type="submit">Join Free</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2026 Smart Teacher Toolkit. All rights reserved.</p>
+    <p>Teaching resources for <span>elementary teachers</span></p>
+  </footer>
+
+</body>
+</html>
