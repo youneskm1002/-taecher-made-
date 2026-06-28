@@ -7,7 +7,7 @@ import {
   updateProfile,
   onAuthStateChanged,
   signOut
-} from "https://www.gstatic.com/firebasejs/12.13.0/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const messageBox = document.getElementById("auth-message");
 
@@ -21,7 +21,13 @@ function showMessage(message, type = "error") {
 
 function redirectAfterLogin() {
   const savedPage = sessionStorage.getItem("redirectAfterLogin");
-  window.location.href = savedPage || "resources.html";
+  sessionStorage.removeItem("redirectAfterLogin");
+
+  if (savedPage && !savedPage.includes("index.html")) {
+    window.location.href = savedPage;
+  } else {
+    window.location.href = "home.html";
+  }
 }
 
 const loginForm = document.getElementById("login-form");
@@ -75,31 +81,24 @@ if (signupForm) {
   });
 }
 
-const googleLoginButton = document.getElementById("google-login");
-const googleSignupButton = document.getElementById("google-signup");
+const googleButtons = document.querySelectorAll("[data-google-auth]");
 
-async function signInWithGoogle() {
-  try {
-    await signInWithPopup(auth, googleProvider);
-    showMessage("Google login successful. Redirecting...", "success");
-    setTimeout(redirectAfterLogin, 700);
-  } catch (error) {
-    showMessage("Google login failed. Please try again.");
-  }
-}
-
-if (googleLoginButton) {
-  googleLoginButton.addEventListener("click", signInWithGoogle);
-}
-
-if (googleSignupButton) {
-  googleSignupButton.addEventListener("click", signInWithGoogle);
-}
+googleButtons.forEach(function (button) {
+  button.addEventListener("click", async function () {
+    try {
+      await signInWithPopup(auth, googleProvider);
+      showMessage("Google login successful. Redirecting...", "success");
+      setTimeout(redirectAfterLogin, 700);
+    } catch (error) {
+      showMessage("Google login failed. Please try again.");
+    }
+  });
+});
 
 onAuthStateChanged(auth, function (user) {
   const currentPage = window.location.pathname.split("/").pop();
 
-  if (user && (currentPage === "login.html" || currentPage === "signup.html")) {
+  if (user && (currentPage === "" || currentPage === "index.html")) {
     setTimeout(redirectAfterLogin, 500);
   }
 });
@@ -111,6 +110,6 @@ logoutButtons.forEach(function (button) {
     e.preventDefault();
 
     await signOut(auth);
-    window.location.href = "login.html";
+    window.location.href = "index.html";
   });
 });
