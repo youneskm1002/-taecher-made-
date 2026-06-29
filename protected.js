@@ -8,7 +8,7 @@ import {
 onAuthStateChanged(auth, function (user) {
   if (!user) {
     sessionStorage.setItem("redirectAfterLogin", window.location.href);
-    window.location.href = "index.html";
+    window.location.href = "login.html";
     return;
   }
 
