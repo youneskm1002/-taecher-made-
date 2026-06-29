@@ -34,6 +34,11 @@ function redirectAfterLogin() {
   }
 }
 
+/* Force Google account choice */
+googleProvider.setCustomParameters({
+  prompt: "select_account"
+});
+
 /* LOGIN EMAIL */
 const loginForm = document.getElementById("login-form");
 
@@ -49,8 +54,8 @@ if (loginForm) {
       showMessage("Connexion réussie. Redirection...", "success");
       setTimeout(redirectAfterLogin, 800);
     } catch (error) {
-      showMessage("Erreur de connexion. Vérifie ton email et ton mot de passe.");
-      console.error(error);
+      console.error("LOGIN ERROR:", error);
+      showMessage("Erreur : " + error.code);
     }
   });
 }
@@ -83,8 +88,8 @@ if (signupForm) {
       showMessage("Compte créé avec succès. Redirection...", "success");
       setTimeout(redirectAfterLogin, 800);
     } catch (error) {
-      showMessage("Erreur d'inscription. Cet email est peut-être déjà utilisé.");
-      console.error(error);
+      console.error("SIGNUP ERROR:", error);
+      showMessage("Erreur : " + error.code);
     }
   });
 }
@@ -101,8 +106,8 @@ googleButtons.forEach(function (button) {
       showMessage("Connexion Google réussie. Redirection...", "success");
       setTimeout(redirectAfterLogin, 800);
     } catch (error) {
-      showMessage("Connexion Google impossible. Vérifie Firebase et le domaine autorisé.");
-      console.error(error);
+      console.error("GOOGLE ERROR:", error);
+      showMessage("Erreur Google : " + error.code);
     }
   });
 });
